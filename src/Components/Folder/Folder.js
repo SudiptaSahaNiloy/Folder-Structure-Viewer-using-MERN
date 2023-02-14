@@ -1,8 +1,16 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFolderPlus, faCircleXmark, faCaretDown } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFolderPlus, faCircleXmark, faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import { deleteFile } from '../../Redux/actionCreator';
+import { connect } from 'react-redux';
 
-function Folder() {
+const mapDispatchToProps = (dispatch) => {
+  return ({
+    deleteFile: (fileId) => dispatch(deleteFile(fileId))
+  })
+}
+
+function Folder(props) {
   return (
     <div style={{
       display: 'flex', flexDirection: 'row', alignItems: 'center',
@@ -11,15 +19,15 @@ function Folder() {
       marginBottom: '10px',
       border: '1px solid black',
       borderRadius: '10px',
-      width: '160px',
+      width: '260px',
       height: '30px'
     }}>
-      <FontAwesomeIcon style={{ marginRight: '5px', color: 'black' }} size="5px" icon={faCaretDown} />
-      Root
-      <FontAwesomeIcon style={{ marginLeft: '5px', color: 'red' }} size="5px" icon={faCircleXmark} />
-      <FontAwesomeIcon style={{ marginLeft: '70px', color: 'green' }} size="5px" icon={faFolderPlus} />
+      <FontAwesomeIcon style={{ marginRight: '5px', color: 'black' }} size="lg" icon={faCaretDown} />
+      {props.folder.fileName}
+      <FontAwesomeIcon onClick={() => props.deleteFile(props.folder._id)} style={{ marginLeft: '5px', color: 'red' }} size="lg" icon={faCircleXmark} />
+      <FontAwesomeIcon style={{ marginLeft: '80px', color: 'green' }} size="lg" icon={faFolderPlus} />
     </div>
   )
 }
 
-export default Folder
+export default connect(null, mapDispatchToProps)(Folder);
