@@ -33,7 +33,7 @@ function Main(props) {
             // border: '1px solid black',
             padding: '20px',
         }}>
-            Folder Structure
+            <h1>Folder Structure</h1>
             {/* <FontAwesomeIcon onClick={() => setenableCreateFile(true)} style={{ marginLeft: '80px', color: 'green' }} size="lg" icon={faFolderPlus} /> */}
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
                 {props.files.map((item) => {
