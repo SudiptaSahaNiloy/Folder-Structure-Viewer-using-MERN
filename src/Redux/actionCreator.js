@@ -1,7 +1,7 @@
 import axios from "axios";
 import * as actionTypes from "./actionTypes.js";
 
-const mainURL = "http://localhost:8000";
+const mainURL = "https://file-structure-mern-api.onrender.com";
 
 export const deleteFile = (fileName) => {
     console.log(fileName);

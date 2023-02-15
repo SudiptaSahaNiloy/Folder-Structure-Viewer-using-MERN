@@ -12,7 +12,7 @@ function Folder(props) {
   const [availabeFiles, setavailabeFiles] = useState(false);
   const [files, setfiles] = useState([]);
 
-  const mainURL = "http://localhost:8000";
+  const mainURL = "https://file-structure-mern-api.onrender.com";
 
   // console.log(props.folder.parent);
 

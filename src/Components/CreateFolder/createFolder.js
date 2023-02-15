@@ -6,7 +6,7 @@ import axios from 'axios';
 function CreateFolder(props) {
     const [fileName, setfileName] = useState('');
 
-    const mainURL = "http://localhost:8000";
+    const mainURL = "https://file-structure-mern-api.onrender.com";
 
     const handleOnChange = (e) => {
         setfileName(e.target.value);
