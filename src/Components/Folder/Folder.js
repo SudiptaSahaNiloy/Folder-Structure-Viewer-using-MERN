@@ -30,8 +30,6 @@ function Folder(props) {
     }
   }
 
-
-
   const deleteFile = async (_id) => {
     try {
       const URL = mainURL + "/files";
@@ -57,7 +55,8 @@ function Folder(props) {
       {props.folder.fileName}
       <FontAwesomeIcon onClick={() => deleteFile(props.folder._id)} style={{ marginLeft: '5px', color: 'red' }} size="lg" icon={faCircleXmark} />
       <FontAwesomeIcon onClick={() => setenableCreateFile(true)} style={{ marginLeft: '80px', color: 'green' }} size="lg" icon={faFolderPlus} />
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', marginTop: '250px', marginRight: '100px' }}>
+
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', marginTop: '380px', marginRight: '100px' }}>
         {files.map((item) => {
           // console.log(item);
           return (
@@ -65,6 +64,7 @@ function Folder(props) {
           )
         })}
       </div>
+
       {enableCreateFile ? <CreateFolder parent={props.folder.fileName} setenableCreateFile={setenableCreateFile} /> : null}
     </div>
   )

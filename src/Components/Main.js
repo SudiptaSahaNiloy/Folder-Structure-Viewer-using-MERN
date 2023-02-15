@@ -27,7 +27,7 @@ function Main(props) {
     return (
         <div style={{
             position: 'relative',
-            top: '20vh',
+            top: '5vh',
             left: '40vw',
             width: '400px',
             // border: '1px solid black',

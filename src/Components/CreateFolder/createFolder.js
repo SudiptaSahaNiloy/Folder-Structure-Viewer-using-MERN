@@ -32,20 +32,24 @@ function CreateFolder(props) {
 
     return (
         <div style={{
-            border: "1px solid black",
+            // border: "solid black",
+            borderRadius: '10px',
+            WebkitBoxShadow: "20px 25px 84px -11px rgba(0,0,0,0.75)",
+            MozBoxShadow: "20px 25px 84px -11px rgba(0,0,0,0.75)",
+            boxShadow: "20px 25px 84px -11px rgba(0,0,0,0.75)",
             position: 'absolute',
-            top: '35vh',
-            left: '1vw',
+            top: '20vh',
+            right: '18vw',
             width: '400px',
-            height: '100px',
+            height: '200px',
             padding: '10px',
             textAlign: 'center',
         }}>
-            <p>Add folder in {props.parent}</p>
-            <input onChange={(e) => handleOnChange(e)} type="text" />
+            <p style={{paddingTop: '20px'}}>Add folder in {props.parent}</p>
+            <input style={{width: '300px', marginBottom: '20px'}} onChange={(e) => handleOnChange(e)} type="text" />
             <div>
-                <button onClick={() => props.setenableCreateFile(false)}>Cancel</button>
-                <button onClick={() => createFile(fileName, props.parent)}>Create</button>
+                <button style={{width: "80px", padding: '10px', marginRight: '10px'}} onClick={() => props.setenableCreateFile(false)}>Cancel</button>
+                <button style={{ width: "80px", padding: '10px' }} onClick={() => createFile(fileName, props.parent)}>Create</button>
             </div>
         </div>
     )
