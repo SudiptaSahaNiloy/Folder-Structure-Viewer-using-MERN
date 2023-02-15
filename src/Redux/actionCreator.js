@@ -3,11 +3,11 @@ import * as actionTypes from "./actionTypes.js";
 
 const mainURL = "http://localhost:8000";
 
-export const deleteFile = (fileId) => {
-    console.log(fileId);
-    const URL = mainURL + "/files";
-    axios.delete(URL, { fileId: fileId })
-        .then(response => console.log(response.data));
+export const deleteFile = (fileName) => {
+    console.log(fileName);
+    // const URL = mainURL + "/files";
+    // axios.delete(URL, { fileName: fileName })
+    //     .then(response => console.log(response.data));
 }
 
 export const createFileResponse = (newFile) => {
@@ -18,6 +18,8 @@ export const createFileResponse = (newFile) => {
 }
 
 export const createFile = (fileName, parent) => dispatch => {
+    console.log(fileName);
+    console.log(parent);
     const file = {
         fileName: fileName,
         parent: parent
